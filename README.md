@@ -61,14 +61,15 @@ The project is structured as follows:
 - `assets/`: Assets related to the project.
 - `docs/`: Documentation related to the project.
 - `src/`: Contains the source code for the game.
+  - `original_code/`: Contains the original code of the previous version (https://github.com/smue-smue/PyLadies_Battleship)
 - `tests/`: Test scripts for the game.
 - `venv/`: Virtual environment for managing dependencies.
 
 
 ## Authors
 
-- **Alexandra** - [Nebulaleaf](https://github.com/Nebulaleaf)
 - **Sandra** - [smue-smue](https://github.com/smue-smue)
+- **Alexandra** - [Nebulaleaf](https://github.com/Nebulaleaf)
 
 
 ## License
