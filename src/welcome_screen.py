@@ -24,12 +24,12 @@ welcome_music.play(-1)  # Play the music on loop
 # Define text properties
 font = pygame.font.Font(None, 75)  # Increase font size for the title
 prompt_font = pygame.font.Font(None, 50)  # Smaller font size for the prompt
-instruction_font = pygame.font.Font(None, 35)  # Smaller font size for the instructions
+instruction_font = pygame.font.Font(None, 50)  # Smaller font size for the instructions
 
 # Render each line of text
 welcome_line1 = font.render("Welcome to", True, (139, 142, 0))  # Yellow text
 welcome_line2 = font.render("Ultimate Battleship", True, (139, 142, 0))  # Yellow text
-prompt_surface = prompt_font.render("Press any key to continue", True, (255, 255, 255))  # White text for the prompt
+prompt_surface = prompt_font.render("Press any key to continue or ESC to quit", True, (255, 255, 255))  # White text for the prompt
 
 # Instruction text (split into multiple lines if necessary)
 instructions = [
@@ -37,7 +37,7 @@ instructions = [
     "1. Place your ships on the grid.",
     "2. Take turns firing at the opponent's grid.",
     "3. First to sink all opponent's ships wins!",
-    "Press any key to start the game."
+    "Press any key to start the game or ESC to quit."
 ]
 
 # Position each line of text
