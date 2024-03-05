@@ -4,6 +4,7 @@ import os
 
 # Initialize Pygame
 pygame.init()
+pygame.mixer.init()  # Initialize the mixer module for sound effects
 
 # Set up the display
 screen_width, screen_height = 1280, 720
@@ -14,6 +15,11 @@ pygame.display.set_caption("Ultimate Battleship")
 background_image_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'assets', 'welcome_background.jpg')
 background_image = pygame.image.load(background_image_path)
 background_image = pygame.transform.scale(background_image, (screen_width, screen_height))
+
+# Load the background music
+sound_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'assets', 'welcome_music.mp3')
+welcome_music = pygame.mixer.Sound(sound_path)
+welcome_music.play(-1)  # Play the music on loop
 
 # Define text properties
 font = pygame.font.Font(None, 75)  # Increase font size for the title
@@ -50,6 +56,9 @@ while running:
 
     # Update the display
     pygame.display.flip()
+
+# Stop the background music
+welcome_music.stop()
 
 # Quit Pygame
 pygame.quit()
