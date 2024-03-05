@@ -1,7 +1,7 @@
 # Battleship Game
 
 This project is a Python implementation of the classic Battleship game. 
-The plan was to enhance it with a graphical interface using Pygame, but that will be tackled later on.
+The plan is to enhance it with a graphical interface using Pygame.
 
 ## Game Overview
 
