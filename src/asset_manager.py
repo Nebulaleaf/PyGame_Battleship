@@ -49,3 +49,5 @@ class AssetManager:
         for i, line in enumerate(self.instructions):
             instruction_surface = self.instruction_font.render(line, True, (255, 255, 255))  # White text for instructions
             screen.blit(instruction_surface, (1280 / 2 - instruction_surface.get_width() / 2, 720 / 3 + i * 50))
+
+print("hello world")
