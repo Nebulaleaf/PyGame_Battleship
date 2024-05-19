@@ -22,3 +22,6 @@ class WelcomeScreen:
         else:
             # Draw the instruction text
             self.assets.draw_instructions(self.screen)
+    
+    def current_state(self):
+        return 'game' if not self.show_welcome else 'welcome'

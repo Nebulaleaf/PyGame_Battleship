@@ -2,6 +2,7 @@ import pygame
 import sys
 from welcome_screen import WelcomeScreen
 from asset_manager import AssetManager
+from play_interface import Gameplay
 
 def main():
     # Initialize Pygame and the mixer module
@@ -16,6 +17,8 @@ def main():
     # Create the asset manager and welcome screen
     assets = AssetManager()
     welcome = WelcomeScreen(screen, assets)
+    current_screen = welcome
+    game_screen = Gameplay(screen, assets)
 
     # Main game loop
     running = True
