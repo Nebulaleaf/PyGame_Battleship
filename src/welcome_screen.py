@@ -1,48 +1,27 @@
 import pygame
-import sys
-import os
+from asset_manager import AssetManager
 
-# Initialize Pygame
-pygame.init()
+class WelcomeScreen:
+    def __init__(self, screen, assets):
+        self.screen = screen
+        self.assets = assets
+        self.show_welcome = True
 
-# Set up the display
-screen_width, screen_height = 800, 600
-screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Ultimate Battleship")
+    def handle_keypress(self, key):
+        if self.show_welcome:
+            # Switch to showing instructions after any key press (except ESC)
+            self.show_welcome = False
 
-# Load the background image
-background_image_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'assets', 'welcome_background.jpg')
-background_image = pygame.image.load(background_image_path)
-background_image = pygame.transform.scale(background_image, (screen_width, screen_height))
+    def draw(self):
+        # Draw the background
+        self.screen.blit(self.assets.background_image, (0, 0))
 
-# Define text properties
-font = pygame.font.Font(None, 75)  # Increase font size
-
-# Render each line of text
-line1_surface = font.render("Welcome to", True, (139, 142, 0))  # White text
-line2_surface = font.render("Ultimate Battleship", True, (139, 142, 0))  # White text
-
-# Position each line of text
-line1_rect = line1_surface.get_rect(center=(screen_width / 2, screen_height / 4))
-line2_rect = line2_surface.get_rect(center=(screen_width / 2, screen_height / 4 + 75))  # Position below the first line
-
-# Main game loop
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    # Draw the background
-    screen.blit(background_image, (0, 0))
-
-    # Draw each line of text
-    screen.blit(line1_surface, line1_rect)
-    screen.blit(line2_surface, line2_rect)
-
-    # Update the display
-    pygame.display.flip()
-
-# Quit Pygame
-pygame.quit()
-sys.exit()
+        if self.show_welcome:
+            # Draw the welcome text and prompt
+            self.assets.draw_welcome(self.screen)
+        else:
+            # Draw the instruction text
+            self.assets.draw_instructions(self.screen)
+    
+    def current_state(self):
+        return 'game' if not self.show_welcome else 'welcome'
