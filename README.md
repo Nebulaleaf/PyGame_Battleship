@@ -1,4 +1,4 @@
-# Battleship Game
+# Battleship Game -- IN PROGRESS --
 
 This project is a Python implementation of the classic Battleship game. 
 The plan is to enhance it with a graphical interface using Pygame.
